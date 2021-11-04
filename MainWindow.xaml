@@ -1,0 +1,23 @@
+﻿<Window x:Class="ImgurParser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImgurParser"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="StartParsing" Content="Начать парсинг" HorizontalAlignment="Left" Margin="296,144,0,0" VerticalAlignment="Top" Height="84" Width="221" Click="StartParsing_Click" FontSize="15"/>
+        <TextBox x:Name="errorMessage" HorizontalAlignment="Left" Margin="24,22,0,0" Text="Ошибки:" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Height="130"/>
+        <TextBox x:Name="linkBlock" HorizontalAlignment="Left" Margin="24,157,0,0" Text="Ссылки: " TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Height="200"/>
+        <Label x:Name="countOfDlTries" Content="Label" HorizontalAlignment="Left" Margin="466,67,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="countOfSucTries" Content="Label" HorizontalAlignment="Left" Margin="466,98,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,-0.307"/>
+        <Label Content="Количество скач. файлов:" HorizontalAlignment="Left" Margin="314,98,0,0" VerticalAlignment="Top" Width="152"/>
+        <Label Content="Общее количество попыток:" HorizontalAlignment="Left" Margin="296,67,0,0" VerticalAlignment="Top" Width="170"/>
+        <Label Content="Сред. успешных попыток:" HorizontalAlignment="Left" Margin="314,38,0,0" VerticalAlignment="Top" Width="152" Height="26"/>
+        <Label x:Name="percentOfSucces" Content="Label" HorizontalAlignment="Left" Margin="466,38,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="timeLab" Content="Label" HorizontalAlignment="Left" Margin="296,244,0,0" VerticalAlignment="Top" Width="282"/>
+        <Label x:Name="timePast" Content="Label" HorizontalAlignment="Left" Margin="296,275,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.777,-2.094" Width="221"/>
+
+    </Grid>
+</Window>
