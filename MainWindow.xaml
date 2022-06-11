@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:ImgurParser"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="StartParsing" Content="Начать парсинг" HorizontalAlignment="Left" Margin="296,144,0,0" VerticalAlignment="Top" Height="84" Width="221" Click="StartParsing_Click" FontSize="15"/>
-        <TextBox x:Name="errorMessage" HorizontalAlignment="Left" Margin="24,22,0,0" Text="Ошибки:" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Height="130"/>
-        <TextBox x:Name="linkBlock" HorizontalAlignment="Left" Margin="24,157,0,0" Text="Ссылки: " TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Height="200"/>
+    <Grid x:Name="MainGrid" Background="#FF7477A7">
+        <Button x:Name="StartParsing" Content="Начать парсинг" HorizontalAlignment="Left" Margin="296,157,0,0" VerticalAlignment="Top" Height="60" Width="221" Click="StartParsing_Click" FontSize="15" Background="#FF6368B1"/>
+        <TextBox x:Name="errorMessage" HorizontalAlignment="Left" Margin="24,22,0,0" Text="Ошибки:" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Height="130" Background="#FF7479C7"/>
+        <TextBox x:Name="linkBlock" HorizontalAlignment="Left" Margin="24,157,0,0" Text="Ссылки: " TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Height="200" Background="#FF7479C7"/>
         <Label x:Name="countOfDlTries" Content="Label" HorizontalAlignment="Left" Margin="466,67,0,0" VerticalAlignment="Top"/>
         <Label x:Name="countOfSucTries" Content="Label" HorizontalAlignment="Left" Margin="466,98,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,-0.307"/>
         <Label Content="Количество скач. файлов:" HorizontalAlignment="Left" Margin="314,98,0,0" VerticalAlignment="Top" Width="152"/>
@@ -18,6 +18,7 @@
         <Label x:Name="percentOfSucces" Content="Label" HorizontalAlignment="Left" Margin="466,38,0,0" VerticalAlignment="Top"/>
         <Label x:Name="timeLab" Content="Label" HorizontalAlignment="Left" Margin="296,244,0,0" VerticalAlignment="Top" Width="282"/>
         <Label x:Name="timePast" Content="Label" HorizontalAlignment="Left" Margin="296,275,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.777,-2.094" Width="221"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="537,157,0,0" VerticalAlignment="Top" Height="40" Width="88" Click="Button_Click"/>
 
     </Grid>
 </Window>
