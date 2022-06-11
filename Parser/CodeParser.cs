@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using ImgurParser.Download;
@@ -20,8 +21,6 @@ namespace ImgurParser.Parser
 
         public CodeParser()
         {
-            ParserNumber++;
-
             var clientHandler = new HttpClientHandler();
 
             loadClient = new DownloadClient();
@@ -31,22 +30,20 @@ namespace ImgurParser.Parser
             httpClient.DefaultRequestHeaders.Add("Referer", "https://away.vk.com/");
         }
 
-        public static int ParserNumber = 0;
-
-        public async void AsyncDownload(string link, string fileName)
+        public async void AsyncTryDownload(string link, string fileName)
         {
-            await Task.Run(() =>
-            {
-                HttpResponseMessage response = httpClient.GetAsync(link).Result;
+            HttpResponseMessage response = httpClient.GetAsync(link).Result;
 
-                if (response.Content.ReadAsStringAsync().Result.Length > 3000)
+            await Task.Run(() => 
+            {
+                numberOfAttemps++;
+
+                if (response.Content.ReadAsStringAsync().Result.Length > 500)
                 {
                     numOfSuccAttempts++;
-                    loadClient.AsyncDownloadImage(link, fileName);
+                    loadClient.DownloadImageAsync(link, fileName);
                 }
-
-                numberOfAttemps++;
-            });        
+            });
         }
 
         public int GetSuccessfulAttemps()

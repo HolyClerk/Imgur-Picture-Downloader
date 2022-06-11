@@ -31,7 +31,7 @@ namespace ImgurParser.Download
             });
         }
 
-        public async void AsyncDownloadImage(string link, string fileName)
+        public async void DownloadImageAsync(string link, string fileName)
         {
             await Task.Run(() =>
             {

@@ -5,27 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImgurParser"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="520" Width="800" MinHeight="520" MaxHeight="520" MinWidth="800" MaxWidth="800">
 
-    <Grid x:Name="MainGrid" Background="#FF7477A7">
-        <Button x:Name="firstThreadButton" Content="Запуск первого потока" HorizontalAlignment="Left" Margin="296,157,0,0" VerticalAlignment="Top" Height="60" Width="221" Click="OnFirstThreadButtonClick" FontSize="15" Background="#FF6368B1"/>
-        <Button x:Name="secondThreadButton" Content="Запуск второго потока" HorizontalAlignment="Left" Margin="536,157,0,0" VerticalAlignment="Top" Height="60" Width="221" Click="OnSecondThreadButtonClick" FontSize="15" Background="#FF6368B1"/>
-        
-        <TextBox x:Name="errorMessage" HorizontalAlignment="Left" Margin="24,22,0,0" Text="Ошибки:" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Height="130" Background="#FF7479C7"/>
-        <TextBox x:Name="linkBlock" HorizontalAlignment="Left" Margin="24,157,0,0" Text="Ссылки: " TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Height="200" Background="#FF7479C7"/>
-        <Label x:Name="downloadsFirst" Content="Label" HorizontalAlignment="Left" Margin="479,291,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="amountFrist" Content="Label" HorizontalAlignment="Left" Margin="479,260,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,-0.307"/>
-        <Label Content="Количество скач. файлов:" HorizontalAlignment="Left" Margin="327,291,0,0" VerticalAlignment="Top" Width="152"/>
-        <Label Content="Общее количество попыток:" HorizontalAlignment="Left" Margin="309,260,0,0" VerticalAlignment="Top" Width="170"/>
-        <Label Content="Сред. успешных попыток:" HorizontalAlignment="Left" Margin="327,231,0,0" VerticalAlignment="Top" Width="152" Height="26"/>
-        <Label x:Name="percentOfSucces" Content="Label" HorizontalAlignment="Left" Margin="479,231,0,0" VerticalAlignment="Top"/>
-        
-        <Label x:Name="downloadsSecond" Content="Label" HorizontalAlignment="Left" Margin="724,291,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.794,1.4"/>
-        <Label x:Name="amountSecond" Content="Label" HorizontalAlignment="Left" Margin="724,262,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.158,-0.307"/>
-        <Label Content="Количество скач. файлов:" HorizontalAlignment="Left" Margin="567,291,0,0" VerticalAlignment="Top" Width="152"/>
-        <Label Content="Общее количество попыток:" HorizontalAlignment="Left" Margin="549,260,0,0" VerticalAlignment="Top" Width="170"/>
-        <Label Content="Сред. успешных попыток:" HorizontalAlignment="Left" Margin="567,231,0,0" VerticalAlignment="Top" Width="152" Height="26"/>
-        <Label x:Name="percentOfSucces_Copy" Content="Label" HorizontalAlignment="Left" Margin="724,231,0,0" VerticalAlignment="Top"/>
+    <Grid x:Name="MainGrid" Background="#FFBFC1DE">
+        <Button x:Name="firstThreadButton" Content="Запуск" HorizontalAlignment="Left" Margin="396,54,0,0" VerticalAlignment="Top" Height="60" Width="222" Click="OnButtonClick" FontSize="15" Background="#FFB7B9DA"/>
 
+        <ComboBox x:Name="threadingsComboBox" HorizontalAlignment="Left" Margin="396,124,0,0" VerticalAlignment="Top" Width="222" Height="25" SelectedIndex="0" Background="#FFBFC1DE" BorderBrush="#FF636060">
+            <ComboBoxItem Content="1 поток"/>
+            <ComboBoxItem Content="2 потока"/>
+            <ComboBoxItem Content="3 потока"/>
+            <ComboBoxItem Content="4 потока"/>
+        </ComboBox>
+
+        <ComboBox x:Name="numOfTries" HorizontalAlignment="Left" Margin="396,154,0,0" VerticalAlignment="Top" Width="222" Height="25" SelectedIndex="0" Background="#FFBFC1DE" BorderBrush="#FF636060">
+            <ComboBoxItem Content="5000"/>
+            <ComboBoxItem Content="10000"/>
+            <ComboBoxItem Content="20000"/>
+            <ComboBoxItem Content="50000"/>
+        </ComboBox>
+
+        <TextBox x:Name="errorMessage" HorizontalAlignment="Left" Margin="24,42,0,0" Text="Ошибки:" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Height="156" Background="#FFB7B9DA"/>
+        <TextBox x:Name="linkBlock" HorizontalAlignment="Left" Margin="24,203,0,0" Text="Ссылки: " TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Height="239" Background="#FFB7B9DA"/>
+
+        <Label Content="Количество попыток:" HorizontalAlignment="Left" Margin="559,252,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Количество скач. файлов:" HorizontalAlignment="Left" Margin="383,252,0,0" VerticalAlignment="Top" Width="150"/>
+
+        <Label x:Name="downloadsFirst" Content="Label" HorizontalAlignment="Left" Margin="438,285,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="downloadsSecond" Content="Label" HorizontalAlignment="Left" Margin="438,311,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="downloadsThrid" Content="Label" HorizontalAlignment="Left" Margin="438,337,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="downloadsFourth" Content="Label" HorizontalAlignment="Left" Margin="438,363,0,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="amountFrist" Content="Label" HorizontalAlignment="Left" Margin="605,285,0,0" VerticalAlignment="Top" />
+        <Label x:Name="amountSecond" Content="Label" HorizontalAlignment="Left" Margin="605,311,0,0" VerticalAlignment="Top" />
+        <Label x:Name="amountThird" Content="Label" HorizontalAlignment="Left" Margin="605,337,0,0" VerticalAlignment="Top" />
+        <Label x:Name="amountFourth" Content="Label" HorizontalAlignment="Left" Margin="605,363,0,0" VerticalAlignment="Top" />
+
+        <Label Content="1 поток:" HorizontalAlignment="Left" Margin="325,285,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.851,0.027"/>
+        <Label Content="2 поток:" HorizontalAlignment="Left" Margin="325,311,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.851,0.027"/>
+        <Label Content="3 поток:" HorizontalAlignment="Left" Margin="325,337,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.851,0.027"/>
+        <Label Content="4 поток:" HorizontalAlignment="Left" Margin="325,363,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.851,0.027"/>
+
+        <Button Content="Test" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" Click="Button_Click" Width="213" Background="#FFB7B9DA" Height="26"/>
+        <ProgressBar x:Name="progress" Height="15" Margin="325,408,111,0" VerticalAlignment="Top" Width="364" Foreground="#FFADFDBC" Background="#FFEDEDED" SmallChange="0.001"/>
     </Grid>
 </Window>
