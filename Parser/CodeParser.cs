@@ -11,12 +11,17 @@ using ImgurParser.Download;
 namespace ImgurParser.Parser
 {
     internal sealed class CodeParser
-    {
+    { 
+        private int numberOfAttemps = 0;
+        private int numOfSuccAttempts = 0;
+
         private HttpClient httpClient;
         private DownloadClient loadClient;
 
         public CodeParser()
         {
+            ParserNumber++;
+
             var clientHandler = new HttpClientHandler();
 
             loadClient = new DownloadClient();
@@ -26,6 +31,8 @@ namespace ImgurParser.Parser
             httpClient.DefaultRequestHeaders.Add("Referer", "https://away.vk.com/");
         }
 
+        public static int ParserNumber = 0;
+
         public async void AsyncDownload(string link, string fileName)
         {
             await Task.Run(() =>
@@ -34,9 +41,22 @@ namespace ImgurParser.Parser
 
                 if (response.Content.ReadAsStringAsync().Result.Length > 3000)
                 {
+                    numOfSuccAttempts++;
                     loadClient.AsyncDownloadImage(link, fileName);
                 }
+
+                numberOfAttemps++;
             });        
+        }
+
+        public int GetSuccessfulAttemps()
+        {
+            return numOfSuccAttempts;
+        }
+
+        public int GetNumberOfAttemps()
+        {
+            return numberOfAttemps;
         }
     }
 }
